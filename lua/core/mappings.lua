@@ -1,5 +1,4 @@
 vim.keymap.set("n", "+", ":Neotree toggle<CR>")
-vim.keymap.set("n", "<C-l>", ":set invrelativenumber<CR>", { noremap = true, desc = "Toggle relative line numbers" })
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
@@ -8,6 +7,12 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
 vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
 vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
+
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-N>", { desc = "Escape terminal" })
+vim.keymap.set("n", "<leader>t", ":term<CR>", { desc = "Terminal" })
+
+-- TODO: this does not work!
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition", noremap = true, silent = true })
 
 vim.keymap.set({ "n", "v" }, "<leader>cf", function()
 	local conform = require("conform")
