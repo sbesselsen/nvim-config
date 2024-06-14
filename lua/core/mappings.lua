@@ -10,9 +10,7 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-N>", { desc = "Escape terminal" })
 vim.keymap.set("n", "<leader>t", ":term<CR>", { desc = "Terminal" })
-
--- TODO: this does not work!
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition", noremap = true, silent = true })
+vim.keymap.set("n", "<C-C>", ':let @/ = ""<CR>', { desc = "Clear search" })
 
 vim.keymap.set({ "n", "v" }, "<leader>cf", function()
 	local conform = require("conform")
